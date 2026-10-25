@@ -1,0 +1,409 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Memex — Your browser, with a memory</title>
+<meta name="description" content="Memex is a browser side panel that saves everything you copy — even 10,000-line files — keeps your notes and todos, and finds any of it in one search. Everything stays on your device.">
+<meta name="theme-color" content="#F8F7F3">
+<link rel="icon" type="image/png" href="assets/favicon-48.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="canonical" href="https://memex.dev/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Memex — Your browser, with a memory">
+<meta property="og:description" content="Everything you copy, saved in full and searchable. Notes with headings, todos, and a side panel that stays out of your way. 100% local.">
+<meta property="og:image" content="https://memex.dev/assets/og.png">
+<meta property="og:url" content="https://memex.dev/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Memex — Your browser, with a memory">
+<meta name="twitter:description" content="Everything you copy, saved in full and searchable. 100% local. Free browser extension for Chrome and Edge.">
+<meta name="twitter:image" content="https://memex.dev/assets/og.png">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Memex","applicationCategory":"BrowserApplication","operatingSystem":"Chrome, Microsoft Edge","description":"Clipboard memory, notes and todos in a Chrome side panel. Local-only.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+</script>
+
+<link rel="preload" href="fonts/instrument-serif-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/geist-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<script>document.documentElement.classList.add("js")</script>
+<link rel="stylesheet" href="styles.css">
+<noscript><style>.js-only{display:none!important}[data-reveal],.hero .line>span,.glass,.stage{opacity:1!important;transform:none!important}</style></noscript>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- ───────── Navigation ───────── -->
+<header class="nav" id="nav">
+  <a class="brand" href="#top" aria-label="Memex home">
+    <img src="assets/icon-128.png" width="30" height="30" alt="">
+    <span class="brand-word">mem<i>ex</i></span>
+  </a>
+  <nav class="nav-pill" aria-label="Primary">
+    <a href="#features">Features</a>
+    <a href="#how">How it works</a>
+    <a href="#privacy">Privacy</a>
+    <a href="#faq">FAQ</a>
+  </nav>
+  <div class="nav-right">
+    <span class="store-group" data-store-group><a class="btn btn-dark" data-store="chrome" href="#install"><span data-lbl>Add to Chrome</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11l6-6M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a class="btn btn-dark" data-store="edge" href="#install"><span data-lbl>Get for Edge</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11l6-6M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></span>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu"><span></span><span></span></button>
+  </div>
+</header>
+<div class="mobile-menu" id="mobileMenu" hidden>
+  <a href="#features">Features</a>
+  <a href="#how">How it works</a>
+  <a href="#privacy">Privacy</a>
+  <a href="#faq">FAQ</a>
+  <span class="store-group store-mobile" data-store-group><a class="btn btn-dark" data-store="chrome" href="#install"><span data-lbl>Add to Chrome</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11l6-6M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a class="btn btn-dark" data-store="edge" href="#install"><span data-lbl>Get for Edge</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11l6-6M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></span>
+</div>
+
+<main id="main">
+<!-- ───────── Hero ───────── -->
+<section class="hero" id="top">
+  <div class="halo" aria-hidden="true"></div>
+
+  <div class="hero-copy">
+    <h1 class="display">
+      <span class="line"><span>Your browser,</span></span>
+      <span class="line it"><span>with a memory.</span></span>
+    </h1>
+    <p class="lede" data-hero-fade>Memex saves everything you copy, keeps your notes and todos, and finds any of it in one search. Even a 10,000-line file comes back whole.</p>
+    <div class="cta-row" data-hero-fade>
+      <span class="store-group" data-store-group data-full><a class="btn btn-dark btn-lg magnetic" data-store="chrome" href="#install"><span data-lbl>Add to Chrome — it’s free</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a class="btn btn-dark btn-lg magnetic" data-store="edge" href="#install"><span data-lbl>Get for Edge — it’s free</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></span>
+      <a class="btn btn-ghost btn-lg" href="#demo">
+        <span class="play" aria-hidden="true"><svg viewBox="0 0 12 12"><path d="M3 1.8v8.4L10 6z" fill="currentColor"/></svg></span>
+        <span>See it work</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- floating glass cards -->
+  <aside class="glass g-left" data-speed="-0.06" aria-hidden="true">
+    <div class="g-ico g-ico-blue"><svg viewBox="0 0 24 24"><path d="M16 4h2a2 2 0 012 2v14a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h2"/><rect x="8" y="2" width="8" height="4" rx="1"/></svg></div>
+    <p class="g-title">Copy it once.<br>Keep every character.</p>
+    <p class="g-sub">Code, prompts, links. Saved in full.</p>
+  </aside>
+  <aside class="glass g-right" data-speed="0.05" aria-hidden="true">
+    <div class="g-faces"><span style="--c:#F0C15B">N</span><span style="--c:#4FB188">T</span><span style="--c:#E06C94">C</span><span class="plus">+</span></div>
+    <p class="g-title">Find it in a second.<br>Click to jump there.</p>
+    <p class="g-sub">One search across clips, notes and todos.</p>
+  </aside>
+
+  <svg class="badge" viewBox="0 0 120 120" aria-hidden="true">
+    <defs><path id="circ" d="M60,60 m-42,0 a42,42 0 1,1 84,0 a42,42 0 1,1 -84,0"/></defs>
+    <g class="badge-ring"><text><textPath href="#circ" startOffset="0" textLength="260" lengthAdjust="spacing">Local only · No cloud · No tracking · No account ·</textPath></text></g>
+    <path class="badge-star" d="M60 44 L62.6 57.4 L76 60 L62.6 62.6 L60 76 L57.4 62.6 L44 60 L57.4 57.4 Z"/>
+  </svg>
+
+  <div class="hero-foot-l" data-hero-fade>
+    <span class="rule"></span>
+    <p>Free. Local-only.<br>No account needed.</p>
+  </div>
+  <div class="hero-foot-r" data-hero-fade>
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2 8 8 2-8 2-2 8-2-8-8-2 8-2z"/></svg>
+    <p><span class="rule"></span>Less digging.<br>More doing.</p>
+  </div>
+
+  <!-- ───────── Live demo ───────── -->
+  <div class="stage" id="demo">
+    <div class="orbit o1 glass" data-speed="-0.04" aria-hidden="true"><i class="dot y"></i><div><b>Clips</b><small>Saved in full</small></div></div>
+    <div class="orbit o2 glass" data-speed="0.07" aria-hidden="true"><i class="dot g"></i><div><b>Notes</b><small>With headings</small></div></div>
+    <div class="orbit o3 glass" data-speed="-0.07" aria-hidden="true"><i class="dot p"></i><div><b>Search</b><small>Click to jump</small></div></div>
+
+    <div class="browser" id="browser">
+      <div class="bar">
+        <span class="tl"><i></i><i></i><i></i></span>
+        <span class="url"><svg viewBox="0 0 16 16" aria-hidden="true"><rect x="3.5" y="7" width="9" height="6" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M5.5 7V5.5a2.5 2.5 0 015 0V7" fill="none" stroke="currentColor" stroke-width="1.3"/></svg>github.com/acme/app/blob/main/src/config.ts</span>
+        <span class="bar-spacer"></span>
+      </div>
+      <div class="browser-body">
+        <div class="page" aria-label="Example code page">
+          <div class="file-head">
+            <span class="fname">src/config.ts</span>
+            <span class="fmeta">1,248 lines · 38 KB</span>
+            <button class="copy-btn" id="demoCopy" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg><span>Copy</span></button>
+          </div>
+<pre class="code" id="demoCode" aria-label="Code sample"><code><span class="ln">1</span><span class="k">import</span> { z } <span class="k">from</span> <span class="s">"zod"</span>;
+<span class="ln">2</span><span class="k">import</span> { sleep } <span class="k">from</span> <span class="s">"./util"</span>;
+<span class="ln">3</span>
+<span class="ln">4</span><span class="c">// Retry policy used by every API call</span>
+<span class="ln">5</span><span class="k">export const</span> <span class="f">retryPolicy</span> = {
+<span class="ln">6</span>  attempts: <span class="n">5</span>,
+<span class="ln">7</span>  backoffMs: <span class="n">250</span>,
+<span class="ln">8</span>  jitter: <span class="k">true</span>,
+<span class="ln">9</span>};
+<span class="ln">10</span>
+<span class="ln">11</span><span class="k">export async function</span> <span class="f">parseConfig</span>(raw: <span class="k">string</span>) {
+<span class="ln">12</span>  <span class="k">const</span> schema = z.<span class="f">object</span>({
+<span class="ln">13</span>    apiUrl: z.<span class="f">string</span>().<span class="f">url</span>(),
+<span class="ln">14</span>    timeoutMs: z.<span class="f">number</span>().<span class="f">default</span>(<span class="n">8000</span>),
+<span class="ln">15</span>    features: z.<span class="f">array</span>(z.<span class="f">string</span>()),
+<span class="ln">16</span>  });
+<span class="ln">17</span>  <span class="k">return</span> schema.<span class="f">parse</span>(JSON.<span class="f">parse</span>(raw));
+<span class="ln">18</span>}</code></pre>
+          <div class="code-fade" aria-hidden="true"></div>
+        </div>
+
+        <!-- Memex side panel (interactive demo) -->
+        <aside class="panel" id="panel" aria-label="Memex side panel demo">
+          <div class="p-head">
+            <div class="p-logo"><img src="assets/icon-48.png" alt="" width="20" height="20"><span>mem<i>ex</i></span></div>
+          </div>
+          <div class="p-tabs" role="tablist">
+            <button class="p-tab" role="tab" data-view="notes"><svg viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.1 2.1 0 013 3L12 15l-4 1 1-4z"/></svg>Notes</button>
+            <button class="p-tab active" role="tab" data-view="clips"><svg viewBox="0 0 24 24"><path d="M16 4h2a2 2 0 012 2v14a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h2"/><rect x="8" y="2" width="8" height="4" rx="1"/></svg>Clips</button>
+            <button class="p-tab" role="tab" data-view="search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>Search</button>
+          </div>
+          <div class="p-chips"><span class="chip on"><i></i>Clipboard: On</span><span class="chip">Local-only</span></div>
+
+          <div class="p-view active" data-pview="clips">
+            <div class="p-scroll" id="clipsScroll">
+              <div class="p-label">Today</div>
+              <div id="newClipSlot"></div>
+              <article class="pc" data-id="c-link">
+                <div class="pc-text link">https://developer.chrome.com/docs/extensions/reference/api/sidePanel</div>
+                <div class="pc-foot"><span class="pill">Chrome</span><span class="tm">12m ago</span><span class="grow"></span><button class="cb copy" data-copy type="button">Copy</button></div>
+              </article>
+              <article class="pc" data-id="c-npm">
+                <div class="pc-text mono">npm install --save-dev vitest</div>
+                <div class="pc-foot"><span class="pill">Npmjs</span><span class="tm">1h ago</span><span class="grow"></span><button class="cb copy" data-copy type="button">Copy</button></div>
+              </article>
+              <article class="pc" data-id="c-prompt">
+                <div class="pc-text">Summarise this changelog for a customer email. Keep it under 120 words and lead with what changed for them.</div>
+                <div class="pc-foot"><span class="pill">Claude</span><span class="tm">3h ago</span><span class="grow"></span><button class="cb copy" data-copy type="button">Copy</button></div>
+              </article>
+            </div>
+          </div>
+
+          <div class="p-view" data-pview="notes">
+            <div class="p-scroll">
+              <div class="p-label">Today</div>
+              <article class="pn" data-id="n-launch">
+                <h3>Launch checklist</h3>
+                <h4>Before Product Hunt</h4>
+                <ul><li class="done">Record the 30-second demo</li><li>Write the first comment</li><li>Line up three early reviews</li></ul>
+                <pre><code>pnpm build &amp;&amp; pnpm test</code></pre>
+                <div class="pc-foot"><span class="tm">just now</span><span class="grow"></span><button class="cb copy" data-copy type="button">Copy</button></div>
+              </article>
+            </div>
+          </div>
+
+          <div class="p-view" data-pview="search">
+            <div class="p-search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg><input id="demoSearch" type="text" placeholder="Search notes, clips, todos…" autocomplete="off" spellcheck="false" aria-label="Search the demo"></div>
+            <div class="p-scroll" id="searchOut"></div>
+          </div>
+          <div class="p-toast" id="pToast" role="status" aria-live="polite">Copied</div>
+        </aside>
+        <span class="fake-cursor" id="fakeCursor" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 3l14 8-6 1.5L10.5 19z" fill="#111" stroke="#fff" stroke-width="1.5" stroke-linejoin="round"/></svg></span>
+      </div>
+    </div>
+    <p class="demo-hint js-only">This is a live demo. Press <b>Copy</b>, then try the Search tab.</p>
+  </div>
+</section>
+
+<!-- ───────── Statement ───────── -->
+<section class="statement" aria-label="Why Memex">
+  <p class="statement-text" id="statementText">You copied it. Then you copied something else, and it was gone. Memex keeps the first thing too.</p>
+</section>
+
+<!-- ───────── Features ───────── -->
+<section class="features" id="features">
+  <div class="sec-head" data-reveal>
+    <h2 class="h2">Four tabs.<br><em>Nothing lost.</em></h2>
+    <p class="sec-sub">A side panel that sits next to the page you’re on. Open it with one click or <kbd>Ctrl</kbd> <kbd>Shift</kbd> <kbd>C</kbd>.</p>
+  </div>
+
+  <article class="feat" data-reveal>
+    <div class="feat-copy">
+      <h3 class="h3">Big copies stay big.</h3>
+      <p>Copy a whole file and get the whole file back. No cut-off after a few thousand characters, no missing last lines. “Copy” buttons on code sites and AI chats are captured too.</p>
+      <ul class="ticks">
+        <li>Up to 2,000,000 characters per clip</li>
+        <li>Shows size and line count; expand to read it all</li>
+        <li>Copy returns every character, indentation included</li>
+      </ul>
+    </div>
+    <div class="feat-visual fv-clip">
+      <div class="vc-card">
+        <div class="vc-top"><span class="vc-badge">code</span><span class="vc-meta">Github · just now</span></div>
+        <pre class="vc-code"><code><span class="k">export async function</span> <span class="f">parseConfig</span>(raw) {
+  <span class="k">const</span> schema = z.<span class="f">object</span>({ … });
+  <span class="c">// …1,240 more lines</span>
+}</code></pre>
+        <div class="vc-stats">
+          <div><b data-count="152802">152,802</b><span>characters saved</span></div>
+          <div><b data-count="3012">3,012</b><span>lines</span></div>
+          <div><b>100%</b><span>copied back</span></div>
+        </div>
+        <div class="vc-bar"><i></i></div>
+      </div>
+    </div>
+  </article>
+
+  <article class="feat flip" data-reveal>
+    <div class="feat-copy">
+      <h3 class="h3">Notes that read like documents.</h3>
+      <p>Give every note a heading. Write in Markdown or use the toolbar for headings, lists, checklists and code blocks. Notes show formatted, and Copy hands you clean Markdown.</p>
+      <ul class="ticks">
+        <li>Right-click any selection and choose “Save to Memex Notes”</li>
+        <li>The page title becomes the heading, the source stays attached</li>
+        <li>Copy with the heading, or copy the text only</li>
+      </ul>
+    </div>
+    <div class="feat-visual fv-note">
+      <div class="vn-card">
+        <div class="vn-tool"><b>H1</b><b>H2</b><b>H3</b><span></span><b>B</b><i>I</i><b>•</b><b>☑</b><b>&lt;/&gt;</b></div>
+        <h4>API migration plan</h4>
+        <h5>Goals</h5>
+        <ul><li>Move auth to the new endpoint</li><li class="done">Freeze the v1 schema</li></ul>
+        <pre><code>curl -X POST /v2/token</code></pre>
+        <div class="vn-actions"><span class="vn-pill">acme.dev ↗</span><span class="vn-copy">Copy</span></div>
+      </div>
+    </div>
+  </article>
+
+  <article class="feat" data-reveal>
+    <div class="feat-copy">
+      <h3 class="h3">Find it. Click it. You’re there.</h3>
+      <p>Search clips, notes and todos at once. Matches deep inside a long clip show up with the surrounding text. Click a result to jump straight to it, or copy it without leaving search.</p>
+      <ul class="ticks">
+        <li>Every result has its own Copy button</li>
+        <li>Jump opens the right tab and highlights the match</li>
+        <li>Multi-word search: every word has to match</li>
+      </ul>
+    </div>
+    <div class="feat-visual fv-search">
+      <div class="vs-input"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg><span>retry policy</span><i class="caret"></i></div>
+      <div class="vs-res">
+        <div class="vs-text">…// <mark>Retry</mark> <mark>policy</mark> used by every API call export const <mark>retryPolicy</mark> = { attempts: 5…</div>
+        <div class="vs-foot"><span>Github · just now · 38,412 chars</span><span class="vs-btns"><b class="vs-copy">Copy</b><b class="vs-go"><svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></b></span></div>
+      </div>
+      <div class="vs-res faint"><div class="vs-text">Launch checklist — <mark>retry</mark> the failed deploy…</div></div>
+    </div>
+  </article>
+
+  <div class="mini-row" data-reveal>
+    <div class="mini">
+      <h3 class="h4">Todos, one tap away</h3>
+      <p>Add a task with a priority, tick it off, search it later. No separate app to open.</p>
+    </div>
+    <div class="mini">
+      <h3 class="h4">Light, dark, or yours</h3>
+      <p>Follows your system theme. Narrow panel or wide window, the layout adapts.</p>
+    </div>
+    <div class="mini">
+      <h3 class="h4">Keyboard first</h3>
+      <p><kbd>Ctrl</kbd> <kbd>Shift</kbd> <kbd>F</kbd> to search, <kbd>Ctrl</kbd> <kbd>Shift</kbd> <kbd>N</kbd> for a new note. Rebind any of them in your browser’s shortcut settings.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ───────── How it works ───────── -->
+<section class="how" id="how">
+  <div class="sec-head" data-reveal>
+    <h2 class="h2">Set it up once.<br><em>Then forget about it.</em></h2>
+  </div>
+  <ol class="steps">
+    <li data-reveal>
+      <span class="step-n" aria-hidden="true">1</span>
+      <h3 class="h4">Turn on clipboard memory</h3>
+      <p>It’s off until you say so. Open the side panel and switch it on. You can pause it any time.</p>
+    </li>
+    <li data-reveal>
+      <span class="step-n" aria-hidden="true">2</span>
+      <h3 class="h4">Copy like you always do</h3>
+      <p>Ctrl+C, right-click, or a site’s Copy button. Memex saves it in the background, with where it came from.</p>
+    </li>
+    <li data-reveal>
+      <span class="step-n" aria-hidden="true">3</span>
+      <h3 class="h4">Open the panel, find it</h3>
+      <p>Search by any word, pin what matters, copy it again. Older copies are still there tomorrow.</p>
+    </li>
+  </ol>
+</section>
+
+<!-- ───────── Privacy ───────── -->
+<section class="privacy" id="privacy">
+  <div class="privacy-card" data-reveal>
+    <div class="priv-big">
+      <span class="priv-zero">0</span>
+      <p>servers. Your clips, notes and todos live in your browser’s local storage and nowhere else.</p>
+    </div>
+    <div class="priv-cols">
+      <div>
+        <h3 class="h4">What it never saves</h3>
+        <ul class="plain">
+          <li>Anything copied in Incognito</li>
+          <li>Password and card fields</li>
+          <li>Banking, login and checkout pages</li>
+          <li>Private keys, JWTs and API tokens</li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="h4">Why it asks for permissions</h3>
+        <ul class="plain">
+          <li><b>All sites</b> — to see what you copy on the page</li>
+          <li><b>Clipboard</b> — to copy a saved clip back to you</li>
+          <li><b>Storage</b> — to keep your data on this device</li>
+          <li><b>Side panel</b> — to show Memex next to the page</li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="h4">You’re in control</h3>
+        <ul class="plain">
+          <li>Off by default, pause any time</li>
+          <li>No account, no sign-in, nothing to sync</li>
+          <li>Delete any clip, or remove the extension to erase everything</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────── FAQ ───────── -->
+<section class="faq" id="faq">
+  <div class="sec-head" data-reveal>
+    <h2 class="h2">Questions,<br><em>answered.</em></h2>
+  </div>
+  <div class="faq-list" data-reveal>
+    <details><summary>Does Memex send my data anywhere?<i aria-hidden="true"></i></summary><p>No. Everything is stored with your browser’s local extension storage on your device. Memex has no account system, no analytics and no server to send anything to. Our <a href="privacy.html">privacy policy</a> spells it out.</p></details>
+    <details><summary>Will it save my passwords?<i aria-hidden="true"></i></summary><p>No. Memex skips password, one-time-code and card fields, banking and login pages, Incognito windows, and anything that looks like a private key, JWT or API token.</p></details>
+    <details><summary>How big can a copy be?<i aria-hidden="true"></i></summary><p>Up to 2,000,000 characters per clip. In the panel a long clip shows a short preview with its size and line count, and “Show full clip” expands it. Copy always returns the complete text.</p></details>
+    <details><summary>It didn’t capture something I copied.<i aria-hidden="true"></i></summary><p>Check that Clipboard is switched on in the side panel. Memex can’t see copies made in the address bar or on chrome:// pages. For local files, enable “Allow access to file URLs” on the extension’s details page and reload the tab.</p></details>
+    <details><summary>How do I open it?<i aria-hidden="true"></i></summary><p>Click the Memex icon, or use <kbd>Ctrl</kbd> <kbd>Shift</kbd> <kbd>C</kbd> for clips, <kbd>Ctrl</kbd> <kbd>Shift</kbd> <kbd>N</kbd> for a new note and <kbd>Ctrl</kbd> <kbd>Shift</kbd> <kbd>F</kbd> for search. On Mac, use <kbd>⌘</kbd>. You can change them at chrome://extensions/shortcuts.</p></details>
+    <details><summary>Is Memex free?<i aria-hidden="true"></i></summary><p>Yes. There’s nothing to pay for and nothing to sign up for.</p></details>
+  </div>
+</section>
+
+<!-- ───────── Install ───────── -->
+<section class="install" id="install">
+  <div class="halo halo-2" aria-hidden="true"></div>
+  <h2 class="display install-h">
+    <span class="line"><span>Stop losing</span></span>
+    <span class="line it"><span>what you copied.</span></span>
+  </h2>
+  <p class="lede">Add Memex to your browser in one click. It starts remembering when you turn it on.</p>
+  <div class="cta-row">
+    <span class="store-group" data-store-group data-full><a class="btn btn-dark btn-lg magnetic" data-store="chrome" href="#install"><span data-lbl>Add to Chrome — it’s free</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a class="btn btn-dark btn-lg magnetic" data-store="edge" href="#install"><span data-lbl>Get for Edge — it’s free</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></span>
+    <a class="btn btn-ghost btn-lg" data-link="producthunt" href="#" hidden><span>Support us on Product Hunt</span></a>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="foot-row">
+    <a class="brand" href="#top"><img src="assets/icon-128.png" width="28" height="28" alt=""><span class="brand-word">mem<i>ex</i></span></a>
+    <nav class="foot-links" aria-label="Footer">
+      <a href="#features">Features</a>
+      <a href="#privacy">Privacy</a>
+      <a href="privacy.html">Privacy policy</a>
+      <a data-link="github" href="#" hidden>GitHub</a>
+    </nav>
+  </div>
+  <p class="foot-note">Memex is a browser extension for Chrome and Edge, for people who copy a lot. © <span id="yr">2026</span> Memex.</p>
+</footer>
+
+<script src="script.js" defer></script>
+</body>
+</html>

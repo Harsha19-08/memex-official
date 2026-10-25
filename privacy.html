@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy policy — Memex</title>
+<meta name="description" content="Memex stores everything locally on your device and sends nothing anywhere.">
+<link rel="icon" type="image/png" href="assets/favicon-48.png">
+<link rel="stylesheet" href="styles.css">
+<style>
+  .doc { max-width: 760px; margin: 0 auto; padding: 150px var(--gutter) 90px; }
+  .doc h1 { font-family: var(--serif); font-weight: 400; font-size: clamp(3rem, 8vw, 5.4rem); line-height: .95; letter-spacing: -.035em; margin-bottom: 18px; }
+  .doc .upd { color: var(--ink-3); margin-bottom: 44px; }
+  .doc h2 { font-family: var(--serif); font-weight: 400; font-size: 2rem; letter-spacing: -.02em; margin: 44px 0 10px; }
+  .doc p, .doc li { color: var(--ink-2); }
+  .doc p { margin-bottom: 14px; }
+  .doc ul { list-style: disc; padding-left: 22px; margin-bottom: 14px; } .doc li { margin: 6px 0; }
+  .doc a { color: var(--blue); text-underline-offset: 3px; }
+  .doc table { width: 100%; border-collapse: collapse; margin: 10px 0 20px; font-size: .95rem; }
+  .doc th, .doc td { text-align: left; padding: 10px 12px 10px 0; border-bottom: 1px solid var(--line); vertical-align: top; }
+  .doc th { font-weight: 600; color: var(--ink); width: 34%; }
+  .doc td { color: var(--ink-2); }
+  .top { position: fixed; z-index: 20; top: 14px; left: 0; right: 0; display: flex; justify-content: space-between; align-items: center; padding: 0 var(--gutter); }
+</style>
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="index.html"><img src="assets/icon-128.png" width="30" height="30" alt=""><span class="brand-word">mem<i>ex</i></span></a>
+  <a class="btn btn-ghost" href="index.html"><span>Back to site</span></a>
+</header>
+<main class="doc">
+  <h1>Privacy policy</h1>
+  <p class="upd">Last updated: October 2026</p>
+
+  <p>Memex is built to be private by design. In short: <strong>everything stays on your device, and Memex sends nothing to us or to anyone else.</strong></p>
+
+  <h2>What Memex stores</h2>
+  <ul>
+    <li><b>Clips</b> — text you copy while clipboard memory is switched on, plus the site it came from and when.</li>
+    <li><b>Notes</b> — notes you write, or save from a page with “Save to Memex Notes”, including the page title and address.</li>
+    <li><b>Todos</b> and your settings (theme, whether clipboard memory is on).</li>
+  </ul>
+  <p>All of this is kept in your browser’s local extension storage on your computer. It never leaves it. We have no servers, no accounts and no analytics, so we cannot see your data.</p>
+
+  <h2>What Memex does not save</h2>
+  <ul>
+    <li>Anything copied in Incognito windows.</li>
+    <li>Text copied from password, one-time-code and payment-card fields.</li>
+    <li>Copies made on banking, sign-in, password-reset and checkout pages.</li>
+    <li>Text that looks like a private key, JSON Web Token, bearer token or common API key.</li>
+  </ul>
+
+  <h2>Why Memex asks for permissions</h2>
+  <table>
+    <tr><th>Access to all sites</th><td>A small script runs on pages so Memex can see when you copy text there. The text is only handed to the extension’s own local storage.</td></tr>
+    <tr><th>Clipboard read / write</th><td>To copy a saved clip or note back to your clipboard, and to capture the clipboard when you press Capture.</td></tr>
+    <tr><th>Storage / unlimited storage</th><td>To keep your clips, notes and todos on your device, including very large copies.</td></tr>
+    <tr><th>Side panel</th><td>To show Memex next to the page you’re on.</td></tr>
+    <tr><th>Context menus</th><td>To add “Save to Memex Notes” when you right-click selected text.</td></tr>
+    <tr><th>Scripting</th><td>To read the full text of your selection when you save it as a note, so long selections aren’t cut short.</td></tr>
+  </table>
+
+  <h2>Sharing and selling</h2>
+  <p>We don’t collect your data, so there is nothing to share, sell or use for advertising. Memex does not use remote code.</p>
+
+  <h2>Deleting your data</h2>
+  <p>Delete any clip, note or todo inside the side panel. Removing the extension from your browser erases everything Memex has stored.</p>
+
+  <h2>Changes</h2>
+  <p>If this policy changes, we’ll update the date above.</p>
+
+  <p id="contactLine" hidden><b>Contact:</b> <a id="contactMail" href="#"></a></p>
+</main>
+<script>
+  const CONFIG_EMAIL = "";  // ← optional: your support email
+  if (CONFIG_EMAIL) { const l = document.getElementById("contactLine"); const a = document.getElementById("contactMail"); a.href = "mailto:" + CONFIG_EMAIL; a.textContent = CONFIG_EMAIL; l.hidden = false; }
+</script>
+</body>
+</html>
