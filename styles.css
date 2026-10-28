@@ -430,3 +430,79 @@ kbd { font-family: var(--mono); font-size: 0.78em; background: var(--white); bor
 .btn.is-soon { opacity: .55; cursor: default; box-shadow: none; pointer-events: none; }
 .store-group.store-mobile { display: flex; flex-direction: column; align-items: stretch; }
 @media (max-width: 760px) { .nav-right .store-group { display: none; } .cta-row .store-group { width: 100%; } .cta-row .store-group .btn { width: 100%; } }
+
+/*foooter devv badge...remove it after usage*/
+
+/* Memex footer: balanced two-column layout */
+.footer-layout {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 32px;
+}
+
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.footer-left .foot-note {
+  margin: 0;
+}
+
+.footer-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 20px;
+  flex: 0 0 auto;
+}
+
+.footer-right .foot-links {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 28px;
+}
+
+.footer-badge {
+  display: block;
+  line-height: 0;
+  max-width: 100%;
+}
+
+.footer-badge img {
+  display: block;
+  width: 248px;
+  height: auto;
+  max-width: 100%;
+}
+
+/* Mobile layout */
+@media (max-width: 640px) {
+  .footer-layout {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .footer-left {
+    flex: auto;
+    gap: 16px;
+  }
+
+  .footer-right {
+    align-items: flex-start;
+    width: 100%;
+    gap: 16px;
+  }
+
+  .footer-right .foot-links {
+    justify-content: flex-start;
+    gap: 16px 22px;
+  }
+}
