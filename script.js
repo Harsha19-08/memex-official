@@ -8,9 +8,9 @@
 const CONFIG = {
   chrome: "",   // ← paste your Chrome Web Store listing URL when it is live (until then Chrome visitors see "coming soon")
   edge: "https://microsoftedge.microsoft.com/addons/detail/memex-%E2%80%94-clipboard-notes-/ollkkbmnilbkkajcifkpmfknhabolhdl",
-  producthunt: "",                                  // ← your Product Hunt launch URL (shows the button when set)
+  producthunt: "https://www.producthunt.com/products/memex-3",                                  // ← your Product Hunt launch URL (shows the button when set)
   github: "",                                       // ← your GitHub repo URL (shows the footer link when set)
-  contactEmail: ""                                  // ← support email shown on the privacy page (hidden when empty)
+  contactEmail: "mharshavardhan199@gmail.com"                                  // ← support email shown on the privacy page (hidden when empty)
 };
 
 (() => {
