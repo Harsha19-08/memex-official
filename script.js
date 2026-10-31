@@ -6,7 +6,7 @@
    or keep the default Chrome Web Store link.
    ────────────────────────────────────────────────────────── */
 const CONFIG = {
-  chrome: "",   // ← paste your Chrome Web Store listing URL when it is live (until then Chrome visitors see "coming soon")
+  chrome: "https://chrome.google.com/webstore/detail/jficingjjgnbnnnmemheeihhhgpngeem",   // ← paste your Chrome Web Store listing URL when it is live (until then Chrome visitors see "coming soon")
   edge: "https://microsoftedge.microsoft.com/addons/detail/memex-%E2%80%94-clipboard-notes-/ollkkbmnilbkkajcifkpmfknhabolhdl",
   producthunt: "https://www.producthunt.com/products/memex-3",                                  // ← your Product Hunt launch URL (shows the button when set)
   github: "",                                       // ← your GitHub repo URL (shows the footer link when set)
